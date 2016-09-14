@@ -155,6 +155,7 @@ private:
     char tempChar;
     vector <char> result;
     vector < vector<char> > filterResults;
+    std::string res;
 
 public:
     void clear()
@@ -192,7 +193,7 @@ public:
 //        getPos(dCare, "don't care");
     }
 
-    void getResult(void)
+    std::string getResult(void)
     {
         result = minimize(ones, dCare); //Solving by minimizing
 
@@ -202,22 +203,31 @@ public:
             filterResults.clear();
             filterResults =  filter(result,ones); //filter result from unessential terms
             //print results
-            cout<<"Minimization = ";
+            cout<<"Minimizationzz = ";
 
-        for(int temp = 0; temp < filterResults.size(); temp++)
-        {
-            if(filterResults.size() > 1)
-                cout<<endl<<temp+1<<" - ";
+                for(int temp = 0; temp < filterResults.size(); temp++)
+                {
+                    if(filterResults.size() > 1){
+                        cout<<endl<<temp+1<<" - ";
+                        res += "\n" + std::to_string(temp + 1) + " - ";
+                    }
 
-            if(SOP == false) convSopToPos(filterResults[temp]);
+                    if(SOP == false) convSopToPos(filterResults[temp]);
 
-            for(int temp1 = 0; temp1 < filterResults[temp].size(); temp1++)
-            cout<<filterResults[temp][temp1];
+                    for(int temp1 = 0; temp1 < filterResults[temp].size(); temp1++){
+                        res += filterResults[temp][temp1];
+                        cout<<filterResults[temp][temp1];
+                    }
+                }
+
+        }
+        else{
+            cout<<"Minimizationz = "<<result[0]<<endl;
+            res += result[0] + "\n";
         }
 
-        }
-        else
-            cout<<"Minimization = "<<result[0]<<endl;
+        cout << res << endl;
+        return res;
     }
 };
 
@@ -236,6 +246,7 @@ int main ()
     k.setType(2);
     k.setResultType(true);
     k.setOnesPosition(on1);
-    k.getResult();
+    cout << endl;
+    cout << k.getResult() << endl;
 
 }//end main
