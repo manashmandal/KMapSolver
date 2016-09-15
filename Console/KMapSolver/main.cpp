@@ -22,5 +22,9 @@ int main ()
     k.setOnesPosition(on1);
     cout << endl;
     cout << k.getResult() << endl;
+//    vector<string> gc = generateGrayCodeSequence(3);
+    std::string expr = "AB+CD+EF";
+
+    cout << countVariable(expr) << endl;
 
 }//end main

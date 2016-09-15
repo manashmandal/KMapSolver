@@ -23,7 +23,7 @@ string getInvertedExpression(char variable)
 unsigned int countVariable(QString expression)
 {
     set <char> charSet;
-    for (char c : expression){
+    for (char c : expression.toStdString()){
         if (!ispunct(c) && !isdigit(c))
             charSet.insert(charSet.begin(), c);
     }
@@ -35,7 +35,7 @@ unsigned int countVariable(QString expression)
 unsigned int countVariable(std::string expression)
 {
     set <char> charSet;
-    for (char c : expression.toStdString()){
+    for (char c : expression){
         if (!ispunct(c) && !isdigit(c))
             charSet.insert(charSet.begin(), c);
     }
