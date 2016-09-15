@@ -125,8 +125,7 @@ unsigned int evaluateExpression(map<string, double> variables, std::string expr)
 {
     std::string parsedExpr = parseExpression(expr);
     cout << "parsed expr: " << parsedExpr << endl;
-//    double value = Lepton::Parser::parse(parsedExpr).evaluate(variables);
-    double value = 1.0;
+    double value = Lepton::Parser::parse(parsedExpr).evaluate(variables);
     if (value >= 1.0)
         return 1;
     return 0;
