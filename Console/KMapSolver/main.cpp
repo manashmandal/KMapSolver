@@ -2,6 +2,9 @@
 #include "operation.h"
 #include "karnaughmap.h"
 #include "graycodehandler.h"
+#include "include/Lepton.h"
+#include "expressionhandler.h"
+#include <QString>
 
 int main ()
 {

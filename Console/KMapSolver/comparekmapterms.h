@@ -4,6 +4,7 @@
 #include "setkmap.h"
 
 
+
 //This class is using for compare iputs results and provide
 // minmizing terms in order to filter them and get results
 class   CompareKmapTerms : public setKmap
