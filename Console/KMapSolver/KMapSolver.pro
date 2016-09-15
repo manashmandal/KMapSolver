@@ -9,4 +9,6 @@ HEADERS += \
     comparekmapterms.h \
     filterkmapresults.h \
     operation.h \
-    setkmap.h
+    setkmap.h \
+    karnaughmap.h \
+    graycodehandler.h
