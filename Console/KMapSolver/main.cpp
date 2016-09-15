@@ -23,7 +23,18 @@ int main ()
     cout << endl;
     cout << k.getResult() << endl;
 //    vector<string> gc = generateGrayCodeSequence(3);
-    std::string expr = "AB+CD+EF";
+    std::string expr = "AB+C'D'+EF";
+
+    std::map<string, double> variables;
+
+    variables["A"] = 1;
+    variables["B"] = 1;
+    variables["C"] = 0;
+    variables["D"] = 0;
+    variables["E"] = 1;
+    variables["F"] = 1;
+
+    cout << evaluateExpression(variables, expr) << endl;
 
     cout << countVariable(expr) << endl;
 

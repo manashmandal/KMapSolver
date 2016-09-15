@@ -52,9 +52,10 @@ std::string parseExpression(std::string expr)
     while (it != expr.end())
     {
         if ((*it) == '\''){
-            (*it) = '\0';
+            expr.erase(it);
             it--;
             string inv_expr = getInvertedExpression((*it));
+            expr.erase(it);
             expr.insert(it, inv_expr.begin(), inv_expr.end());
             it = expr.begin();
         } else {
@@ -90,9 +91,10 @@ void parseExpression(QString expression)
     while (it != expr.end())
     {
         if ((*it) == '\''){
-            (*it) = '\0';
+            expr.erase(it);
             it--;
             string inv_expr = getInvertedExpression((*it));
+            expr.erase(it);
             expr.insert(it, inv_expr.begin(), inv_expr.end());
             it = expr.begin();
         } else {
@@ -117,6 +119,17 @@ void parseExpression(QString expression)
         }
     }
     cout << expr << endl;
+}
+
+unsigned int evaluateExpression(map<string, double> variables, std::string expr)
+{
+    std::string parsedExpr = parseExpression(expr);
+    cout << "parsed expr: " << parsedExpr << endl;
+//    double value = Lepton::Parser::parse(parsedExpr).evaluate(variables);
+    double value = 1.0;
+    if (value >= 1.0)
+        return 1;
+    return 0;
 }
 
 #endif // EXPRESSIONHANDLER_H
