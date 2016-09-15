@@ -12,7 +12,8 @@ SOURCES += main.cpp \
            src/Operation.cpp \
            src/ParsedExpression.cpp \
            src/Parser.cpp \
-           src/MSVC_erfc.h
+           src/MSVC_erfc.h \
+    dialog.cpp
 
 HEADERS += \
     comparekmapterms.h \
@@ -31,5 +32,9 @@ HEADERS += \
     include/lepton/ParsedExpression.h \
     include/lepton/Parser.h \
     include/lepton/windowsIncludes.h \
-    expressionhandler.h
+    expressionhandler.h \
+    dialog.h
+
+FORMS += \
+    dialog.ui
 
