@@ -5,13 +5,16 @@
 #include <QString>
 #include <string>
 #include <set>
-
+#include "graycodehandler.h"
 
 using std::string;
 using std::vector;
 
 using std::cout;
 using std::endl;
+
+vector <string> literals{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+
 
 
 string getInvertedExpression(char variable)
@@ -129,6 +132,32 @@ unsigned int evaluateExpression(map<string, double> variables, std::string expr)
     if (value >= 1.0)
         return 1;
     return 0;
+}
+
+vector <int> getOnesPosition(std::string expression){
+    map <string, double> vars;
+    vector <int> _ones;
+    int vc = countVariable(expression);
+    vector <string> grayCodes = generateGrayCodeSequence(vc);
+
+    // 100
+    for (string graycode: grayCodes){
+        for (int i = 0; i < graycode.size(); i++){
+            std::string value(1, graycode[i]);
+            vars[literals[i]] = atoi(value.c_str());
+        }
+
+        int exprValue = evaluateExpression(vars, expression);
+        if (exprValue > 0){
+            _ones.push_back(strBinaryToDecimal(graycode));
+        }
+    }
+
+    for (int v : _ones){
+        cout << "val : " << v << endl;
+    }
+
+    return _ones;
 }
 
 #endif // EXPRESSIONHANDLER_H
