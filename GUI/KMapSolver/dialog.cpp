@@ -30,7 +30,7 @@ Dialog::~Dialog()
 void Dialog::on_minimizeButton_clicked()
 {
     KarnaughMap k;
-    std::string expr = ui->expressionLineEdit->text().toStdString();
+    std::string expr = ui->expressionLineEdit->text().toUpper().toStdString();
     k.setType(countVariable(expr));
     k.setOnesPosition(getOnesPosition(expr));
     k.setResultType(true);
