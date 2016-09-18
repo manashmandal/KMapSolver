@@ -23,4 +23,6 @@ Qt C++ and Lepton Based K-Map solver for unlimited variables
 
 # Reference:
 
-Thanks to [Abdelrahman Elzedy](http://www.codeproject.com/script/Membership/View.aspx?mid=9729999) for the core [KMap Minimizer Program for infinite variables](http://www.codeproject.com/Articles/649849/A-Cplusplus-Karnaugh-Map-Minimizer-Infinite-Variab).
+[1]. Thanks to [Abdelrahman Elzedy](http://www.codeproject.com/script/Membership/View.aspx?mid=9729999) for the core [KMap Minimizer Program for infinite variables](http://www.codeproject.com/Articles/649849/A-Cplusplus-Karnaugh-Map-Minimizer-Infinite-Variab).
+
+[2]. [Lepton Math Parser for C++](https://simtk.org/projects/lepton)
